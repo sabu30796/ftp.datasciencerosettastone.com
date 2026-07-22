@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Loading...</title>
 
   <style>
@@ -13,8 +12,7 @@
 
     body {
       margin: 0;
-      width: 100%;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,28 +21,17 @@
     }
 
     .loading {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-    }
-
-    .message {
-      font-size: 20px;
-      font-weight: bold;
-      color: #222;
-      margin-bottom: 20px;
     }
 
     .spinner {
       width: 50px;
       height: 50px;
+      margin: 0 auto 20px;
       border: 5px solid #ddd;
       border-top: 5px solid #333;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin-bottom: 20px;
     }
 
     .text {
@@ -53,10 +40,6 @@
     }
 
     @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-
       to {
         transform: rotate(360deg);
       }
@@ -67,18 +50,16 @@
 <body>
 
   <div class="loading">
-
-    <div class="message">
-      EAAA EAAA NGELAG YAA
-    </div>
-
     <div class="spinner"></div>
-
-    <div class="text">
-      Loading...
-    </div>
-
+    <div class="text">Loading...</div>
   </div>
+
+  <script>
+    // Tetap berada di halaman loading
+    window.addEventListener("load", function () {
+      console.log("Halaman selesai dimuat.");
+    });
+  </script>
 
 </body>
 </html>
